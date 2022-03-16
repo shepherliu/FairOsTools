@@ -72,7 +72,6 @@ def new_pod(pod_name, password, cookies = None, host = 'http://localhost:9090'):
 		ret = {
 			'message': 'success',
 			'code': 0,
-			'cookies': requests.utils.dict_from_cookiejar(res.cookies),
 			'data': res.text
 		}
 
@@ -101,7 +100,6 @@ def open_pod(pod_name, password, cookies = None, host = 'http://localhost:9090')
 		ret = {
 			'message': 'success',
 			'code': 0,
-			'cookies': requests.utils.dict_from_cookiejar(res.cookies),
 			'data': res.text
 		}
 

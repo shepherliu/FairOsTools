@@ -125,18 +125,12 @@ class Fairos(object):
 
 		res = pod.new_pod(pod_name, self.__password, cookies = self.__cookies, host = self.__host)
 
-		if res['message'] == 'success':
-			self.__cookies = res['cookies']
-
 		return res
 
 	#https://docs.modules.fairdatasociety.org/api/#tag/Pod/paths/~1pod~1open/post
 	def open_pod(self, pod_name:str):
 
 		res = pod.open_pod(pod_name, self.__password, cookies = self.__cookies, host = self.__host)
-
-		if res['message'] == 'success':
-			self.__cookies = res['cookies']
 
 		return res
 
@@ -148,7 +142,7 @@ class Fairos(object):
 	#https://docs.modules.fairdatasociety.org/api/#tag/Pod/paths/~1pod~1sync/post
 	def sync_pod(self, pod_name:str):
 
-		return pdo.sync_pod(pod_name, cookies = self.__cookies, host = self.__host)
+		return pod.sync_pod(pod_name, cookies = self.__cookies, host = self.__host)
 
 	#https://docs.modules.fairdatasociety.org/api/#tag/Pod/paths/~1pod~1share/post
 	def share_pod(self, pod_name:str):
@@ -362,11 +356,11 @@ def test():
 
 	#some tests for functions
 	
-	fs = Fairos('http://localhost:9090')
+	fs = Fairos('fairos.fairdatasociety.org')
 
-	fs.signup_user('test', 'test')
+	fs.signup_user('loveswarm', 'loveswarm')
 
-	fs.login_user('test', 'test')
+	fs.login_user('loveswarm', 'loveswarm')
 
 	res = fs.user_stat()
 	print(res)
