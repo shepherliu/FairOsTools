@@ -21,7 +21,7 @@ def signup_user(user_name, password, host = 'http://localhost:9090' , mnemonic =
 		'mnemonic': mnemonic
 	}
 
-	res = requests.post(url = host + path, headers = headers, data = data)
+	res = requests.post(url = host + path, headers = headers, data = json.dumps(data))
 
 	if res.status_code >= 200 and res.status_code < 300:
 
@@ -52,7 +52,7 @@ def login_user(user_name, password, host = 'http://localhost:9090'):
 		'password': password,
 	}
 
-	res = requests.post(url = host + path, headers = headers, data = data)
+	res = requests.post(url = host + path, headers = headers, data = json.dumps(data))
 
 	if res.status_code >= 200 and res.status_code < 300:
 
@@ -81,7 +81,7 @@ def import_user(user_name, password, address, host = 'http://localhost:9090'):
 		'address': address
 	}
 
-	res = requests.post(url = host + path, headers = headers, data = data)
+	res = requests.post(url = host + path, headers = headers, data = json.dumps(data))
 
 	if res.status_code >= 200 and res.status_code < 300:
 
@@ -201,7 +201,7 @@ def delete_user(password, cookies = None, host = 'http://localhost:9090'):
 		'Content-Type': 'application/json'
 	}		
 
-	res = requests.delete(url = host + path, headers = headers, cookies = cookies, data = data)
+	res = requests.delete(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))
 
 	if res.status_code >= 200 and res.status_code < 300:
 

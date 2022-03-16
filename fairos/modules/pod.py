@@ -65,7 +65,7 @@ def new_pod(pod_name, password, cookies = None, host = 'http://localhost:9090'):
 		'Content-Type': 'application/json'
 	}
 
-	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = data)	
+	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))	
 
 	if res.status_code >= 200 and res.status_code < 300:
 
@@ -94,7 +94,7 @@ def open_pod(pod_name, password, cookies = None, host = 'http://localhost:9090')
 		'Content-Type': 'application/json'
 	}
 
-	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = data)	
+	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))	
 
 	if res.status_code >= 200 and res.status_code < 300:
 
@@ -122,7 +122,7 @@ def close_pod(pod_name, cookies = None, host = 'http://localhost:9090'):
 		'Content-Type': 'application/json'
 	}
 
-	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = data)	
+	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))	
 
 	if res.status_code >= 200 and res.status_code < 300:
 
@@ -149,7 +149,7 @@ def sync_pod(pod_name, cookies = None, host = 'http://localhost:9090'):
 		'Content-Type': 'application/json'
 	}
 
-	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = data)	
+	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))	
 
 	if res.status_code >= 200 and res.status_code < 300:
 
@@ -177,7 +177,7 @@ def share_pod(pod_name, password, cookies = None, host = 'http://localhost:9090'
 		'Content-Type': 'application/json'
 	}
 
-	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = data)	
+	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))	
 
 	if res.status_code >= 200 and res.status_code < 300:
 
@@ -205,7 +205,7 @@ def delete_pod(pod_name, password, cookies = None, host = 'http://localhost:9090
 		'Content-Type': 'application/json'
 	}
 
-	res = requests.delete(url = host + path, headers = headers, cookies = cookies, data = data)	
+	res = requests.delete(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))	
 
 	if res.status_code >= 200 and res.status_code < 300:
 

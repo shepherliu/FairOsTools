@@ -20,7 +20,7 @@ def create_new_table(pod_name, table_name, indexType, cookies = None, host = 'ht
 		'Content-Type': 'application/json'
 	}	
 
-	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = data)	
+	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))	
 
 	if res.status_code >= 200 and res.status_code < 300:
 
@@ -71,7 +71,7 @@ def open_table(pod_name, table_name, cookies = None, host = 'http://localhost:90
 		'Content-Type': 'application/json'
 	}	
 
-	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = data)	
+	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))	
 
 	if res.status_code >= 200 and res.status_code < 300:
 
@@ -99,7 +99,7 @@ def count_table(pod_name, table_name, cookies = None, host = 'http://localhost:9
 		'Content-Type': 'application/json'
 	}	
 
-	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = data)	
+	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))	
 
 	if res.status_code >= 200 and res.status_code < 300:
 
@@ -127,7 +127,7 @@ def delete_table(pod_name, table_name, cookies = None, host = 'http://localhost:
 		'Content-Type': 'application/json'
 	}	
 
-	res = requests.delete(url = host + path, headers = headers, cookies = cookies, data = data)	
+	res = requests.delete(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))	
 
 	if res.status_code >= 200 and res.status_code < 300:
 
@@ -157,7 +157,7 @@ def put_key_value(pod_name, table_name, key, value, cookies = None, host = 'http
 		'Content-Type': 'application/json'
 	}	
 
-	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = data)	
+	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))	
 
 	if res.status_code >= 200 and res.status_code < 300:
 
@@ -215,7 +215,7 @@ def delete_value(pod_name, table_name, key, cookies = None, host = 'http://local
 		'Content-Type': 'application/json'
 	}	
 
-	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = data)	
+	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))	
 
 	if res.status_code >= 200 and res.status_code < 300:
 
@@ -246,7 +246,7 @@ def seek_key(pod_name, table_name, start, end, limit, cookies = None, host = 'ht
 		'Content-Type': 'application/json'
 	}	
 
-	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = data)	
+	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))	
 
 	if res.status_code >= 200 and res.status_code < 300:
 
@@ -298,7 +298,7 @@ def load_csv(pod_name, table_name, memory, cookies = None, host = 'http://localh
 		'Content-Type': 'application/json'
 	}	
 
-	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = data)	
+	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))	
 
 	if res.status_code >= 200 and res.status_code < 300:
 

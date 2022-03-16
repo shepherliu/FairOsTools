@@ -21,7 +21,7 @@ def create_documentDB(pod_name, table_name, si, mutable, cookies = None, host = 
 		'Content-Type': 'application/json'
 	}	
 
-	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = data)
+	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))
 
 	if res.status_code >= 200 and res.status_code < 300:
 		
@@ -72,7 +72,7 @@ def open_documentDB(pod_name, table_name, cookies = None, host = 'http://localho
 		'Content-Type': 'application/json'
 	}	
 
-	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = data)
+	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))
 
 	if res.status_code >= 200 and res.status_code < 300:
 		
@@ -101,7 +101,7 @@ def count_documents(pod_name, table_name, expr, cookies = None, host = 'http://l
 		'Content-Type': 'application/json'
 	}	
 
-	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = data)
+	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))
 
 	if res.status_code >= 200 and res.status_code < 300:
 		
@@ -129,7 +129,7 @@ def delete_documentDB(pod_name, table_name, cookies = None, host = 'http://local
 		'Content-Type': 'application/json'
 	}	
 
-	res = requests.delete(url = host + path, headers = headers, cookies = cookies, data = data)
+	res = requests.delete(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))
 
 	if res.status_code >= 200 and res.status_code < 300:
 		
@@ -211,7 +211,7 @@ def index_json(pod_name, table_name, file, cookies = None, host = 'http://localh
 		'Content-Type': 'application/json'
 	}
 
-	res = requests.post(url = host + path, headers = headers , cookies = cookies, data = data)
+	res = requests.post(url = host + path, headers = headers , cookies = cookies, data = json.dumps(data))
 
 	if res.status_code >= 200 and res.status_code < 300:
 		
@@ -240,7 +240,7 @@ def put_document(pod_name, table_name, doc, cookies = None, host = 'http://local
 		'Content-Type': 'application/json'
 	}
 
-	res = requests.post(url = host + path, headers = headers , cookies = cookies, data = data)
+	res = requests.post(url = host + path, headers = headers , cookies = cookies, data = json.dumps(data))
 
 	if res.status_code >= 200 and res.status_code < 300:
 		
@@ -292,7 +292,7 @@ def delete_document(pod_name, table_name, id, cookies = None, host = 'http://loc
 		'Content-Type': 'application/json'
 	}
 
-	res = requests.delete(url = host + path, headers = headers , cookies = cookies, data = data)
+	res = requests.delete(url = host + path, headers = headers , cookies = cookies, data = json.dumps(data))
 
 	if res.status_code >= 200 and res.status_code < 300:
 		

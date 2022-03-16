@@ -19,7 +19,7 @@ def make_dir(pod_name, dir_path, cookies = None, host = 'http://localhost:9090')
 		'Content-Type': 'application/json'
 	}
 
-	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = data)
+	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))
 
 	if res.status_code >= 200 and res.status_code < 300:
 
@@ -47,7 +47,7 @@ def remove_dir(pod_name, dir_path, cookies = None, host = 'http://localhost:9090
 		'Content-Type': 'application/json'
 	}
 
-	res = requests.delete(url = host + path, headers = headers, cookies = cookies, data = data)
+	res = requests.delete(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))
 
 	if res.status_code >= 200 and res.status_code < 300:
 
@@ -183,7 +183,7 @@ def download_file(pod_name, file_path, request_type = 'post', cookies = None, ho
 
 		path = '/v1/file/download'
 
-		res = requests.post(url = host + path, headers = headers, cookies = cookies, data = data)
+		res = requests.post(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))
 
 	if res.status_code >= 200 and res.status_code < 300:
 		
@@ -212,7 +212,7 @@ def share_file(pod_name, pod_path_file, dest_user, cookies = None, host = 'http:
 		'Content-Type': 'application/json'
 	}	
 
-	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = data)
+	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))
 
 	if res.status_code >= 200 and res.status_code < 300:
 		
@@ -241,7 +241,7 @@ def receive_file(pod_name, sharing_ref, dir_path, cookies = None, host = 'http:/
 		'Content-Type': 'application/json'
 	}	
 
-	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = data)
+	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))
 
 	if res.status_code >= 200 and res.status_code < 300:
 		
@@ -269,7 +269,7 @@ def receive_file_info(pod_name, sharing_ref, cookies = None, host = 'http://loca
 		'Content-Type': 'application/json'
 	}	
 
-	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = data)
+	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))
 
 	if res.status_code >= 200 and res.status_code < 300:
 		
@@ -297,7 +297,7 @@ def delete_info(pod_name, file_path, cookies = None, host = 'http://localhost:90
 		'Content-Type': 'application/json'
 	}	
 
-	res = requests.delete(url = host + path, headers = headers, cookies = cookies, data = data)
+	res = requests.delete(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))
 
 	if res.status_code >= 200 and res.status_code < 300:
 		
