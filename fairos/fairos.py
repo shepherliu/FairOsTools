@@ -383,13 +383,10 @@ def test():
 	res = fs.make_dir('mypod','tempdir')
 	print(res)
 
-	res =fs.list_dir('mypod')
+	res =fs.list_dir('mypod', 'tempdir')
 	print(res)
 
 	res = fs.stat_dir('mypod', 'tempdir')
-	print(res)
-
-	res = fs.user_logout()
 	print(res)
 
 	res = fs.create_new_table('mypod', 'mytable')
@@ -424,3 +421,6 @@ def test():
 
 	res = fs.count_documents('mypod', 'mytable')
 	print(res)
+
+	res = fs.user_logout()
+	print(res)	
