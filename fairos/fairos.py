@@ -424,7 +424,7 @@ def test():
 	res = fs.open_documentDB('mypod', 'mytable')
 	print(res)
 
-	res = fs.count_documents('mypod', 'mytable')
+	res = fs.count_documents('mypod', 'mytable', '')
 	print(res)
 
 	res = fs.close_pod('mypod')
