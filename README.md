@@ -3,9 +3,24 @@ a python lib and tool for FairOs
 
 How to Run it On Local?
 
-1. make sure that your system has installed git and python3. Linux or macos is recommend.
+1. make sure that your system has installed git, docker and python3. Linux or macos is recommend.
 
 2. run the fairos server.
+	
+	wget https://github.com/fairDataSociety/fairOS-dfs/raw/master/docker/testnet-new/docker-compose.yml
+	
+	modify the docker-compose.yml, change "--postageBlockId" to you postage stamp
+	
+	Change --cookieDomain "fairos1.fairdatasociety.org" to your domain, add CORS domains to --cors-origins
+	
+	start it in background: docker-compose up -d
+	
+	You can see logs with command:
+	
+		docker logs fairstack_fairos_1 -f
+		docker logs fairstack_bee-1_1 -f
+	
+	get you ethereum address from the bee logs and facuet your address with little gBzz and gETH.
 
 3. clone the project the the local.
 
