@@ -9,9 +9,13 @@ How to Run it On Local?
 	
 	wget https://github.com/fairDataSociety/fairOS-dfs/raw/master/docker/testnet-new/docker-compose.yml
 	
-	modify the docker-compose.yml, change "--postageBlockId" to you postage stamp
+	modify the docker-compose.yml
+		
+		change "--postageBlockId" to you postage stamp
 	
-	Change --cookieDomain "fairos1.fairdatasociety.org" to your domain, add CORS domains to --cors-origins
+		change --cookieDomain "fairos1.fairdatasociety.org" to your domain, add CORS domains to --cors-origins
+		
+		change BEE_SWAP_ENDPOINT to your own infura swap-endpoint
 	
 	start it in background: docker-compose up -d
 	
