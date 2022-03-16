@@ -7,7 +7,9 @@ How to Run it On Local?
 
 2. run the fairos server.
 	
-	wget https://github.com/fairDataSociety/fairOS-dfs/raw/master/docker/testnet-new/docker-compose.yml
+	download the fairos server docker-compose.yml
+	
+		wget https://github.com/fairDataSociety/fairOS-dfs/raw/master/docker/testnet-new/docker-compose.yml
 	
 	modify the docker-compose.yml
 		
@@ -17,7 +19,9 @@ How to Run it On Local?
 		
 		change BEE_SWAP_ENDPOINT to your own infura swap-endpoint
 	
-	start it in background: docker-compose up -d
+	start it in background: 
+		
+		docker-compose up -d
 	
 	You can see logs with command:
 	
