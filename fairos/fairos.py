@@ -356,7 +356,7 @@ def test():
 
 	#some tests for functions
 	
-	fs = Fairos('fairos.fairdatasociety.org')
+	fs = Fairos('https://fairos.fairdatasociety.org')
 
 	fs.signup_user('loveswarm', 'loveswarm')
 
