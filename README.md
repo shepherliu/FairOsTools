@@ -63,3 +63,6 @@ How to Run it On Local?
 		  print(res)
 
 	
+How it Works?
+
+  1. see the fairos api documents at: https://docs.fairos.fairdatasociety.org/
