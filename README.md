@@ -9,34 +9,34 @@ How to Run it On Local?
 
 3. clone the project the the local.
 
-    git clone https://github.com/shepherliu/FairOsTools.git
+    	git clone https://github.com/shepherliu/FairOsTools.git
 
 4. change to the project dir
 
-    cd FairOsTools
+    	cd FairOsTools
 
 5. install FairOsTools libs
     
-    python3 setup.py install
+    	python3 setup.py install
     
 6. use the libs like this:
   
-    from fairos.fairos import Fairos
-    from fairos.fairos import test
-    
-    #run the default test case
-    test()
-    
-    fs = Fairos('http://localhost:9090')
+	    from fairos.fairos import Fairos
+	    from fairos.fairos import test
 
-	  fs.signup_user('test', 'test')
+	    #run the default test case
+	    test()
 
-	  fs.login_user('test', 'test')
+	    fs = Fairos('http://localhost:9090')
 
-	  res = fs.user_stat()
-	  print(res)
+		  fs.signup_user('test', 'test')
 
-	  res = fs.new_pod('mypod')
-	  print(res)
+		  fs.login_user('test', 'test')
+
+		  res = fs.user_stat()
+		  print(res)
+
+		  res = fs.new_pod('mypod')
+		  print(res)
 
 	
