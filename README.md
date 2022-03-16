@@ -64,7 +64,7 @@ How to Run it On Local?
 		  
 7. for a quick start, you can use the offical fairos test server https://fairos.fairdatasociety.org/ if you have already registered an account at https://app.fairdrive.fairdatasociety.org/ (beause the offical fairos test server's register function is not avaiable now ).
 	
-	
+8. we make a video at youtube: https://www.youtube.com/watch?v=c33ZGXySyV4
 	
 How it Works?
 
