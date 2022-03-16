@@ -313,9 +313,9 @@ class Fairos(object):
 		return db.open_documentDB(pod_name, table_name, cookies = self.__cookies, host = self.__host)
 
 	#https://docs.modules.fairdatasociety.org/api/#tag/Document-DB/paths/~1doc~1count/post
-	def count_documents(self, pod_name:str, table_name:str):
+	def count_documents(self, pod_name:str, table_name:str, expr:str):
 
-		return db.count_documents(pod_name, table_name, cookies = self.__cookies, host = self.__host)
+		return db.count_documents(pod_name, table_name, expr, cookies = self.__cookies, host = self.__host)
 
 	#https://docs.modules.fairdatasociety.org/api/#tag/Document-DB/paths/~1doc~1delete/delete
 	def delete_documentDB(self, pod_name:str, table_name:str):
@@ -358,14 +358,19 @@ def test():
 	
 	fs = Fairos('https://fairos.fairdatasociety.org')
 
-	fs.signup_user('loveswarm', 'loveswarm')
+	res = fs.signup_user('loveswarm', 'loveswarm')
+	print(res)
 
-	fs.login_user('loveswarm', 'loveswarm')
+	res = fs.login_user('loveswarm', 'loveswarm')
+	print(res)
 
 	res = fs.user_stat()
 	print(res)
 
 	res = fs.new_pod('mypod')
+	print(res)
+
+	res = fs.open_pod('mypod')
 	print(res)
 
 	res = fs.sync_pod('mypod')
@@ -420,6 +425,9 @@ def test():
 	print(res)
 
 	res = fs.count_documents('mypod', 'mytable')
+	print(res)
+
+	res = fs.close_pod('mypod')
 	print(res)
 
 	res = fs.user_logout()
