@@ -62,7 +62,7 @@ How to Run it On Local?
 		  res = fs.new_pod('mypod')
 		  print(res)
 		  
-7. for a quick start, you can use the offical fairos test server https://fairos.fairdatasociety.org/ if you have already registered an account at https://app.fairdrive.fairdatasociety.org/(beause the offical fairos test server's register function is not avaiable now ).
+7. for a quick start, you can use the offical fairos test server https://fairos.fairdatasociety.org/ if you have already registered an account at https://app.fairdrive.fairdatasociety.org/ (beause the offical fairos test server's register function is not avaiable now ).
 	
 	
 	
