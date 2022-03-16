@@ -358,7 +358,7 @@ class Fairos(object):
 
 		return db.delete_document(pod_name, table_name, id, cookies = self.__cookies, host = self.__host)
 
-if __name__ == '__main__':
+def test():
 
 	#some tests for functions
 	
