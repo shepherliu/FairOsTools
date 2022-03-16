@@ -385,13 +385,13 @@ def test():
 	res = fs.stat_pod('mypod')
 	print(res)
 
-	res = fs.make_dir('mypod','tempdir')
+	res = fs.make_dir('mypod','/tempdir')
 	print(res)
 
-	res =fs.list_dir('mypod', 'tempdir')
+	res =fs.list_dir('mypod', '/tempdir')
 	print(res)
 
-	res = fs.stat_dir('mypod', 'tempdir')
+	res = fs.stat_dir('mypod', '/tempdir')
 	print(res)
 
 	res = fs.create_new_table('mypod', 'mytable')
