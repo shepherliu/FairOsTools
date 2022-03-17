@@ -25,8 +25,8 @@ How to Run it On Local?
 	
 	You can see logs with command:
 	
-		docker logs fairstack_fairos_1 -f
-		docker logs fairstack_bee-1_1 -f
+		docker logs fairos_fairos_1 -f
+		docker logs fairos_bee-1_1 -f
 	
 	get you ethereum address from the bee logs and facuet your address with little gBzz and gETH.
 
