@@ -3,7 +3,7 @@ a python lib and tool for FairOs
 
 How to Run it On Local?
 
-1. make sure that your system has installed git, docker and python3. Linux or macos is recommend.
+1. make sure that your system has installed git and python3. Linux or macos is recommend.
 
 2. run the fairos server.
 	
