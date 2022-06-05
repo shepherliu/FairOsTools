@@ -4,6 +4,7 @@ import os
 import sys
 import json
 import requests
+from requests_toolbelt import MultipartEncoder
 
 #make dir
 def make_dir(pod_name, dir_path, cookies = None, host = 'http://localhost:9090'):
@@ -175,20 +176,19 @@ def upload_file(pod_name, dir_path, filename, block_size = '512', cookies = None
 
 	path = '/v1/file/upload'
 
-	params = {
+	m = MultipartEncoder(fields = {
 		'pod_name': pod_name,
 		'dir_path': dir_path,
-		'block_size': block_size
-	}
-
-	files = {'files': open(filename,'rb')}
+		'block_size': block_size,
+		'files': ('filename', open(filename, 'rb'), 'text/plain')
+	})
 
 	headers = {
-		'Content-Type': 'application/x-www-form-urlencoded',
+		'Content-Type': m.content_type,
 		'fairOS-dfs-Compression': "gzip"
 	}
 
-	res = requests.post(url = host + path, headers = headers , cookies = cookies, params = params, files = files)
+	res = requests.post(url = host + path, headers = headers , cookies = cookies, data = m)
 
 	if res.status_code >= 200 and res.status_code < 300:
 		
@@ -229,7 +229,7 @@ def download_file(pod_name, file_path, request_type = 'post', cookies = None, ho
 		res = requests.get(url = host + path, headers = headers, cookies = cookies)
 	else:
 
-		path = '/v1/file/download'
+		path = '/v1/file/download?pod_name={0}&file_path={1}'.format(pod_name, file_path)
 
 		res = requests.post(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))
 
