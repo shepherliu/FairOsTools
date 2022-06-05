@@ -298,7 +298,7 @@ def share_file(pod_name, file_path, dest_user, cookies = None, host = 'http://lo
 #receive file
 def receive_file(pod_name, sharing_ref, dir_path, cookies = None, host = 'http://localhost:9090'):
 
-	path = '/v1/file/receive'
+	path = '/v1/file/receive?pod_name={0}&sharing_ref={1}&dir_path={2}'.format(pod_name,sharing_ref,dir_path)
 
 	data = {
 		'pod_name': pod_name,
@@ -310,7 +310,7 @@ def receive_file(pod_name, sharing_ref, dir_path, cookies = None, host = 'http:/
 		'Content-Type': 'application/json'
 	}	
 
-	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))
+	res = requests.get(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))
 
 	if res.status_code >= 200 and res.status_code < 300:
 		
@@ -335,7 +335,7 @@ def receive_file(pod_name, sharing_ref, dir_path, cookies = None, host = 'http:/
 #receive file info
 def receive_file_info(pod_name, sharing_ref, cookies = None, host = 'http://localhost:9090'):
 
-	path = '/v1/file/receiveinfo'
+	path = '/v1/file/receiveinfo?pod_name={0}&sharing_ref={1}&dir_path={2}'.format(pod_name,sharing_ref,dir_path)
 
 	data = {
 		'pod_name': pod_name,
@@ -346,7 +346,7 @@ def receive_file_info(pod_name, sharing_ref, cookies = None, host = 'http://loca
 		'Content-Type': 'application/json'
 	}	
 
-	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))
+	res = requests.get(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))
 
 	if res.status_code >= 200 and res.status_code < 300:
 		

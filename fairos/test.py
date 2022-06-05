@@ -156,7 +156,9 @@ def test():
 	except:
 		file_sharing_reference = ''
 
-	res.login_user('test-swarm3', 'test-swarm3')
+	res = fs.login_user('test-swarm3', 'test-swarm3')
+	res = fs.open_pod('pod1')
+	
 	print('test receive file')
 	res = fs.receive_file('pod1', file_sharing_reference, '/')
 	print(res)
