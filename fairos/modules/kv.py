@@ -101,6 +101,14 @@ def open_table(pod_name, table_name, cookies = None, host = 'http://localhost:90
 
 	try:
 		ret = res.json()
+		
+		#already open as also success
+		if ret['message'].find('already open') != -1:
+			
+			ret = {
+				'message': 'success',
+				'code': 0
+			}
 	except:
 		ret = {
 			'message': ret.text(),
@@ -364,13 +372,14 @@ def get_next(pod_name, table_name, cookies = None, host = 'http://localhost:9090
 	return ret
 
 #load csv
-def load_csv(pod_name, table_name, memory, cookies = None, host = 'http://localhost:9090'):
+def load_csv(pod_name, table_name, csv, memory, cookies = None, host = 'http://localhost:9090'):
 
 	path = '/v1/kv/loadcsv'
 
 	data = {
 		'pod_name': pod_name,
 		'table_name': table_name,
+		'csv': csv,
 		'memory': memory
 	}
 

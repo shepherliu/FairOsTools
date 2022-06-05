@@ -131,6 +131,14 @@ def open_pod(pod_name, password, cookies = None, host = 'http://localhost:9090')
 
 	try:
 		ret = res.json()
+
+		#already open as also success
+		if ret['message'].find('already open') != -1:
+			
+			ret = {
+				'message': 'success',
+				'code': 0
+			}		
 	except:
 		ret = {
 			'message': ret.text(),

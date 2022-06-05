@@ -75,9 +75,9 @@ class Fairos(object):
 		return res
 
 	#https://docs.fairos.fairdatasociety.org/api/index.html#tag/User/paths/~1v2~1user~1migrate/post
-	def migrate_user(self, password:str):
+	def migrate_user(self):
 
-		return user_v2.migrate_user(password, cookies = self.__cookies, host = self.__host)
+		return user_v2.migrate_user(self.__password, cookies = self.__cookies, host = self.__host)
 
 	#https://docs.fairos.fairdatasociety.org/api/index.html#tag/User/paths/~1v1~1user~1present/get
 	def user_present(self, user_name:str):
@@ -301,9 +301,9 @@ class Fairos(object):
 		return kv.get_next(pod_name, table_name, cookies = self.__cookies, host = self.__host)
 
 	#https://docs.fairos.fairdatasociety.org/api/index.html#tag/Key-Value-Store/paths/~1v1~1kv~1loadcsv/post
-	def load_csv(self, pod_name:str, table_name:str, memory:str):
+	def load_csv(self, pod_name:str, table_name:str, csv:str, memory:str):
 
-		return kv.load_csv(pod_name, table_name, memory, cookies = self.__cookies, host = self.__host)
+		return kv.load_csv(pod_name, table_name, csv, memory, cookies = self.__cookies, host = self.__host)
 
 	#https://docs.fairos.fairdatasociety.org/api/index.html#tag/Key-Value-Store/paths/~1v1~1kv~1present/get
 	def key_present(self, pod_name:str, table_name:str, key:str):
@@ -343,9 +343,9 @@ class Fairos(object):
 		return db.find_documents(pod_name, table_name, expr, limit, cookies = self.__cookies, host = self.__host)
 
 	#https://docs.fairos.fairdatasociety.org/api/index.html#tag/Key-Value-Store/paths/~1v1~1doc~1loadjson/post
-	def load_json(self, pod_name:str, table_name:str, filename:str):
+	def load_json(self, pod_name:str, table_name:str, json:str):
 
-		return db.load_json(pod_name, table_name, filename, cookies = self.__cookies, host = self.__host)
+		return db.load_json(pod_name, table_name, json, cookies = self.__cookies, host = self.__host)
 
 	#https://docs.fairos.fairdatasociety.org/api/index.html#tag/Key-Value-Store/paths/~1v1~1doc~1indexjson/post
 	def index_json(self, pod_name:str, table_name:str, file:str):

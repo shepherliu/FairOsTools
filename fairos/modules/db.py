@@ -102,6 +102,14 @@ def open_documentDB(pod_name, table_name, cookies = None, host = 'http://localho
 
 	try:
 		ret = res.json()
+
+		#already open as also success
+		if ret['message'].find('already open') != -1:
+			
+			ret = {
+				'message': 'success',
+				'code': 0
+			}		
 	except:
 		ret = {
 			'message': ret.text(),
@@ -215,7 +223,7 @@ def find_documents(pod_name, table_name, expr, limit, cookies = None, host = 'ht
 	return ret
 
 #load json
-def load_json(pod_name, table_name, filename, cookies = None, host = 'http://localhost:9090'):
+def load_json(pod_name, table_name, json, cookies = None, host = 'http://localhost:9090'):
 
 	path = '/v1/doc/loadjson'
 
@@ -224,7 +232,7 @@ def load_json(pod_name, table_name, filename, cookies = None, host = 'http://loc
 		'table_name': table_name
 	}
 
-	files = {'files': open(filename,'rb')}
+	files = {'files': open(json,'rb')}
 
 	headers = {
 		'Content-Type': 'application/x-www-form-urlencoded',
