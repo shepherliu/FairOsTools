@@ -144,7 +144,7 @@ def test():
 	print(res)	
 
 	print('test download file')
-	res = fs.download_file('pod1', '/test/test/test.txt')
+	res = fs.download_file('pod1', '/test/test')
 	print(res)
 
 	# print('test share file')
@@ -214,7 +214,7 @@ def test():
 	print('test count table')
 	res = fs.count_table('pod1', 'test_table')
 	print(res)	
-	
+
 	print('test seek key')
 	res = fs.seek_key('pod1', 'test_table', 'test_')
 	print(res)

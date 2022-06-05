@@ -236,7 +236,7 @@ def load_json(pod_name, table_name, json, cookies = None, host = 'http://localho
 	m = MultipartEncoder(fields = {
 		'pod_name': pod_name,
 		'table_name': table_name,
-		'json': (basename, open(filename, 'rb'), types)
+		'json': (basename, open(json, 'rb'), types)
 	})
 
 	headers = {

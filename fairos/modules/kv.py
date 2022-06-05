@@ -391,7 +391,7 @@ def load_csv(pod_name, table_name, csv, memory, cookies = None, host = 'http://l
 		'pod_name': pod_name,
 		'table_name': table_name,
 		'memory': memory,
-		'csv': (basename, open(filename, 'rb'), types)
+		'csv': (basename, open(csv, 'rb'), types)
 	})
 
 	headers = {
