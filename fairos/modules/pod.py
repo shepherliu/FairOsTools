@@ -30,7 +30,7 @@ def pod_receiveinfo(reference, cookies = None, host = 'http://localhost:9090'):
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -61,7 +61,7 @@ def pod_receive(reference, cookies = None, host = 'http://localhost:9090'):
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -97,7 +97,7 @@ def new_pod(pod_name, password, cookies = None, host = 'http://localhost:9090'):
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -141,7 +141,7 @@ def open_pod(pod_name, password, cookies = None, host = 'http://localhost:9090')
 			}		
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -176,7 +176,7 @@ def close_pod(pod_name, cookies = None, host = 'http://localhost:9090'):
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -211,7 +211,7 @@ def sync_pod(pod_name, cookies = None, host = 'http://localhost:9090'):
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -247,7 +247,7 @@ def share_pod(pod_name, password, cookies = None, host = 'http://localhost:9090'
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -283,7 +283,7 @@ def delete_pod(pod_name, password, cookies = None, host = 'http://localhost:9090
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -314,7 +314,7 @@ def list_pod(cookies = None, host = 'http://localhost:9090'):
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -345,7 +345,7 @@ def stat_pod(pod_name, cookies = None, host = 'http://localhost:9090'):
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -376,7 +376,7 @@ def pod_present(pod_name, cookies = None, host = 'http://localhost:9090'):
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 

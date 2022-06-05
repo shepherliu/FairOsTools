@@ -40,7 +40,7 @@ def signup_user(user_name, password, host = 'http://localhost:9090' , mnemonic =
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -76,7 +76,7 @@ def login_user(user_name, password, host = 'http://localhost:9090'):
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -114,7 +114,7 @@ def import_user(user_name, password, address, host = 'http://localhost:9090'):
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -145,7 +145,7 @@ def user_present(user_name, host = 'http://localhost:9090'):
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -176,7 +176,7 @@ def is_logged_in(user_name, host = 'http://localhost:9090'):
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -207,7 +207,7 @@ def user_logout(cookies = None, host = 'http://localhost:9090'):
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -238,7 +238,7 @@ def export_user(cookies = None, host = 'http://localhost:9090'):
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -273,7 +273,7 @@ def delete_user(password, cookies = None, host = 'http://localhost:9090'):
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -304,7 +304,7 @@ def user_stat(cookies = None, host = 'http://localhost:9090'):
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 

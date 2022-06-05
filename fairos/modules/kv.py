@@ -36,7 +36,7 @@ def create_new_table(pod_name, table_name, indexType, cookies = None, host = 'ht
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -67,7 +67,7 @@ def list_tables(pod_name, cookies = None, host = 'http://localhost:9090'):
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -111,7 +111,7 @@ def open_table(pod_name, table_name, cookies = None, host = 'http://localhost:90
 			}
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -147,7 +147,7 @@ def count_table(pod_name, table_name, cookies = None, host = 'http://localhost:9
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -183,7 +183,7 @@ def delete_table(pod_name, table_name, cookies = None, host = 'http://localhost:
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -221,7 +221,7 @@ def put_key_value(pod_name, table_name, key, value, cookies = None, host = 'http
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -258,7 +258,7 @@ def get_value(pod_name, table_name, key, format = 'string', cookies = None, host
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -295,7 +295,7 @@ def delete_value(pod_name, table_name, key, cookies = None, host = 'http://local
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -334,7 +334,7 @@ def seek_key(pod_name, table_name, start_prefix, end_prefix, limit, cookies = No
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -365,7 +365,7 @@ def get_next(pod_name, table_name, cookies = None, host = 'http://localhost:9090
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -403,7 +403,7 @@ def load_csv(pod_name, table_name, csv, memory, cookies = None, host = 'http://l
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -434,7 +434,7 @@ def key_present(pod_name, table_name, key, cookies = None, host = 'http://localh
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 

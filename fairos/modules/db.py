@@ -37,7 +37,7 @@ def create_documentDB(pod_name, table_name, si, mutable, cookies = None, host = 
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -68,7 +68,7 @@ def list_documentDBs(pod_name, cookies = None, host = 'http://localhost:9090'):
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -112,7 +112,7 @@ def open_documentDB(pod_name, table_name, cookies = None, host = 'http://localho
 			}		
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -149,7 +149,7 @@ def count_documents(pod_name, table_name, expr, cookies = None, host = 'http://l
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -185,7 +185,7 @@ def delete_documentDB(pod_name, table_name, cookies = None, host = 'http://local
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -216,7 +216,7 @@ def find_documents(pod_name, table_name, expr, limit, cookies = None, host = 'ht
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -254,7 +254,7 @@ def load_json(pod_name, table_name, json, cookies = None, host = 'http://localho
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -291,7 +291,7 @@ def index_json(pod_name, table_name, file, cookies = None, host = 'http://localh
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -328,7 +328,7 @@ def put_document(pod_name, table_name, doc, cookies = None, host = 'http://local
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -359,7 +359,7 @@ def get_document(pod_name, table_name, id, cookies = None, host = 'http://localh
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
@@ -396,7 +396,7 @@ def delete_document(pod_name, table_name, id, cookies = None, host = 'http://loc
 		ret = res.json()
 	except:
 		ret = {
-			'message': ret.text(),
+			'message': res.text,
 			'code': 0
 		}
 
