@@ -45,7 +45,7 @@ How to Run it On Local?
 6. use the libs like this:
   
 	    from fairos.fairos import Fairos
-	    from fairos.fairos import test
+	    from fairos.test import test
 
 	    #run the default test case
 	    test()

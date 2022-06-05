@@ -31,8 +31,8 @@ def signup_user(user_name, password, host = 'http://localhost:9090' , mnemonic =
 			'data': {'address':''}
 		}
 
-		if mnemonic == '':
-			ret['data'] = res.json()
+		# if mnemonic == '':
+		ret['data'] = res.json()
 
 		return ret
 	
@@ -244,15 +244,10 @@ def export_user(cookies = None, host = 'http://localhost:9090'):
 
 	return ret
 
-#migrate user
-def migrate_user(password, cookies = None, host = 'http://localhost:9090'):
-
-	path = '/v1/user/delete'
-
 #delete user
 def delete_user(password, cookies = None, host = 'http://localhost:9090'):
 	
-	path = '/v2/user/migrate'
+	path = '/v2/user/delete'
 
 	data = {
 		'password': password
@@ -262,7 +257,7 @@ def delete_user(password, cookies = None, host = 'http://localhost:9090'):
 		'Content-Type': 'application/json'
 	}		
 
-	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))
+	res = requests.delete(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))
 
 	if res.status_code >= 200 and res.status_code < 300:
 

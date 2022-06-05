@@ -220,7 +220,7 @@ def put_key_value(pod_name, table_name, key, value, cookies = None, host = 'http
 	return ret
 
 #get value
-def get_value(pod_name, table_name, key, format = '', cookies = None, host = 'http://localhost:9090'):
+def get_value(pod_name, table_name, key, format = 'string', cookies = None, host = 'http://localhost:9090'):
 
 	if format == '':
 
@@ -294,15 +294,15 @@ def delete_value(pod_name, table_name, key, cookies = None, host = 'http://local
 	return ret
 
 #seek key
-def seek_key(pod_name, table_name, start, end, limit, cookies = None, host = 'http://localhost:9090'):
+def seek_key(pod_name, table_name, start_prefix, end_prefix, limit, cookies = None, host = 'http://localhost:9090'):
 
 	path = '/v1/kv/seek'
 
 	data = {
 		'pod_name': pod_name,
 		'table_name': table_name,
-		'start': start,
-		'end': end,
+		'start_prefix': start,
+		'end_prefix': end,
 		'limit': limit
 	}
 
