@@ -27,7 +27,7 @@ def make_dir(pod_name, dir_path, cookies = None, host = 'http://localhost:9090')
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.text
 		}
 
@@ -63,7 +63,7 @@ def remove_dir(pod_name, dir_path, cookies = None, host = 'http://localhost:9090
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.text
 		}
 
@@ -94,7 +94,7 @@ def list_dir(pod_name, dir_path, cookies = None, host = 'http://localhost:9090')
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.json()
 		}
 
@@ -125,7 +125,7 @@ def stat_dir(pod_name, dir_path, cookies = None, host = 'http://localhost:9090')
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.json()
 		}
 
@@ -156,7 +156,7 @@ def dir_present(pod_name, dir_path, cookies = None, host = 'http://localhost:909
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.json()
 		}
 
@@ -199,7 +199,7 @@ def upload_file(pod_name, dir_path, filename, block_size = '512', cookies = None
 		
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.json()
 		}
 
@@ -242,7 +242,7 @@ def download_file(pod_name, file_path, request_type = 'post', cookies = None, ho
 		
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'content': res.text
 		}
 
@@ -259,13 +259,13 @@ def download_file(pod_name, file_path, request_type = 'post', cookies = None, ho
 	return ret
 
 #share file
-def share_file(pod_name, pod_path_file, dest_user, cookies = None, host = 'http://localhost:9090'):
+def share_file(pod_name, file_path, dest_user, cookies = None, host = 'http://localhost:9090'):
 
 	path = '/v1/file/share'
 
 	data = {
 		'pod_name': pod_name,
-		'pod_path_file': pod_path_file,
+		'file_path': file_path,
 		'dest_user': dest_user
 	}
 
@@ -279,7 +279,7 @@ def share_file(pod_name, pod_path_file, dest_user, cookies = None, host = 'http:
 		
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.json()
 		}
 
@@ -316,7 +316,7 @@ def receive_file(pod_name, sharing_ref, dir_path, cookies = None, host = 'http:/
 		
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.json()
 		}
 
@@ -352,7 +352,7 @@ def receive_file_info(pod_name, sharing_ref, cookies = None, host = 'http://loca
 		
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.json()
 		}
 
@@ -388,7 +388,7 @@ def delete_info(pod_name, file_path, cookies = None, host = 'http://localhost:90
 		
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.text
 		}
 
@@ -419,7 +419,7 @@ def stat_info(pod_name, file_path, cookies = None, host = 'http://localhost:9090
 		
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.json()
 		}
 

@@ -28,7 +28,7 @@ def create_new_table(pod_name, table_name, indexType, cookies = None, host = 'ht
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.text,
 		}
 
@@ -59,7 +59,7 @@ def list_tables(pod_name, cookies = None, host = 'http://localhost:9090'):
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.json(),
 		}
 
@@ -95,7 +95,7 @@ def open_table(pod_name, table_name, cookies = None, host = 'http://localhost:90
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.text,
 		}
 
@@ -139,7 +139,7 @@ def count_table(pod_name, table_name, cookies = None, host = 'http://localhost:9
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.json(),
 		}
 
@@ -175,7 +175,7 @@ def delete_table(pod_name, table_name, cookies = None, host = 'http://localhost:
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.text,
 		}
 
@@ -213,7 +213,7 @@ def put_key_value(pod_name, table_name, key, value, cookies = None, host = 'http
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.text,
 		}
 
@@ -250,7 +250,7 @@ def get_value(pod_name, table_name, key, format = 'string', cookies = None, host
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.json(),
 		}
 
@@ -281,16 +281,13 @@ def delete_value(pod_name, table_name, key, cookies = None, host = 'http://local
 		'Content-Type': 'application/json'
 	}	
 
-	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))	
+	res = requests.delete(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))
 
-	print(res.status_code)
-	print(res.text)
-	
 	if res.status_code >= 200 and res.status_code < 300:
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.text,
 		}
 
@@ -329,7 +326,7 @@ def seek_key(pod_name, table_name, start_prefix, end_prefix, limit, cookies = No
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.text,
 		}
 
@@ -365,7 +362,7 @@ def get_next(pod_name, table_name, cookies = None, host = 'http://localhost:9090
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.json(),
 		}
 
@@ -407,7 +404,7 @@ def load_csv(pod_name, table_name, csv, memory, cookies = None, host = 'http://l
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.text,
 		}
 
@@ -438,7 +435,7 @@ def key_present(pod_name, table_name, key, cookies = None, host = 'http://localh
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.json(),
 		}
 

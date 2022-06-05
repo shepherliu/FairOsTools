@@ -147,31 +147,31 @@ def test():
 	res = fs.download_file('pod1', '/test/test')
 	print(res)
 
-	# print('test share file')
-	# res = fs.share_file('pod1', '/test/test/test.txt', 'test-swarm3')
-	# print(res)
+	print('test share file')
+	res = fs.share_file('pod1', '/test/test/test.txt', 'test-swarm3')
+	print(res)
 
-	# try:
-	# 	file_sharing_reference = res['data']['file_sharing_reference']
-	# except:
-	# 	file_sharing_reference = ''
+	try:
+		file_sharing_reference = res['data']['file_sharing_reference']
+	except:
+		file_sharing_reference = ''
 
-	# res.login_user('test-swarm3', 'test-swarm3')
-	# print('test receive file')
-	# res = fs.receive_file('pod1', file_sharing_reference, '/')
-	# print(res)
+	res.login_user('test-swarm3', 'test-swarm3')
+	print('test receive file')
+	res = fs.receive_file('pod1', file_sharing_reference, '/')
+	print(res)
 
-	# print('test receive file info')
-	# res = fs.receive_file_info('pod1', file_sharing_reference)
-	# print(res)
+	print('test receive file info')
+	res = fs.receive_file_info('pod1', file_sharing_reference)
+	print(res)
 
-	# print('test stat info')
-	# res = fs.stat_info('pod1', '/test/test.txt')
-	# print(res)
+	print('test stat info')
+	res = fs.stat_info('pod1', '/test/test.txt')
+	print(res)
 
-	# print('test delete info')
-	# res = fs.delete_info('pod1', '/test/test.txt')
-	# print(res)
+	print('test delete info')
+	res = fs.delete_info('pod1', '/test/test.txt')
+	print(res)
 
 	print('test create new table')
 	res = fs.create_new_table('pod1', 'test_table')
@@ -216,7 +216,7 @@ def test():
 	print(res)	
 
 	print('test seek key')
-	res = fs.seek_key('pod1', 'test_table', 'test_')
+	res = fs.seek_key('pod1', 'test_table', 'test')
 	print(res)
 
 	print('test get next')

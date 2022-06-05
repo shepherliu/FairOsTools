@@ -27,7 +27,7 @@ def signup_user(user_name, password, host = 'http://localhost:9090' , mnemonic =
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': {'address':''}
 		}
 
@@ -66,7 +66,7 @@ def login_user(user_name, password, host = 'http://localhost:9090'):
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'cookies': requests.utils.dict_from_cookiejar(res.cookies)
 		}
 
@@ -103,7 +103,7 @@ def import_user(user_name, password, address, host = 'http://localhost:9090'):
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.json(),
 			'cookies': requests.utils.dict_from_cookiejar(res.cookies)
 		}
@@ -135,7 +135,7 @@ def user_present(user_name, host = 'http://localhost:9090'):
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.json()
 		}
 
@@ -166,7 +166,7 @@ def is_logged_in(user_name, host = 'http://localhost:9090'):
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.json()
 		}
 
@@ -197,7 +197,7 @@ def user_logout(cookies = None, host = 'http://localhost:9090'):
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.text
 		}
 
@@ -228,7 +228,7 @@ def export_user(cookies = None, host = 'http://localhost:9090'):
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.json()
 		}
 
@@ -263,7 +263,7 @@ def delete_user(password, cookies = None, host = 'http://localhost:9090'):
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.text
 		}
 
@@ -294,7 +294,7 @@ def user_stat(cookies = None, host = 'http://localhost:9090'):
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.json()
 		}
 

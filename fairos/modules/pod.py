@@ -51,7 +51,7 @@ def pod_receive(sharing_ref, cookies = None, host = 'http://localhost:9090'):
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.text
 		}
 
@@ -87,7 +87,7 @@ def new_pod(pod_name, password, cookies = None, host = 'http://localhost:9090'):
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.text
 		}
 
@@ -123,7 +123,7 @@ def open_pod(pod_name, password, cookies = None, host = 'http://localhost:9090')
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.text
 		}
 
@@ -166,7 +166,7 @@ def close_pod(pod_name, cookies = None, host = 'http://localhost:9090'):
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.text
 		}
 
@@ -201,7 +201,7 @@ def sync_pod(pod_name, cookies = None, host = 'http://localhost:9090'):
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.text
 		}
 
@@ -237,7 +237,7 @@ def share_pod(pod_name, password, cookies = None, host = 'http://localhost:9090'
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.json()
 		}
 
@@ -304,7 +304,7 @@ def list_pod(cookies = None, host = 'http://localhost:9090'):
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.json()
 		}
 
@@ -335,7 +335,7 @@ def stat_pod(pod_name, cookies = None, host = 'http://localhost:9090'):
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.json()
 		}
 
@@ -366,7 +366,7 @@ def pod_present(pod_name, cookies = None, host = 'http://localhost:9090'):
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.json()
 		}
 

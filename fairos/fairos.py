@@ -26,7 +26,7 @@ class Fairos(object):
 		fairos api response struct
 		{
 			'message': 'success', 
-			'code': 0,
+			'code': res.status_code,
 			'cookies': object
 			'data': json or text
 		}
@@ -234,9 +234,9 @@ class Fairos(object):
 		return filesystem.download_file(pod_name, file_path, request_type = request_type, cookies = self.__cookies, host = self.__host)
 
 	#https://docs.fairos.fairdatasociety.org/api/index.html#tag/File-System/paths/~1v1~1file~1share/post
-	def share_file(self, pod_name:str, pod_path_file:str, dest_user:str):
+	def share_file(self, pod_name:str, file_path:str, dest_user:str):
 
-		return filesystem.share_file(pod_name, pod_path_file, dest_user, cookies = self.__cookies, host = self.__host)
+		return filesystem.share_file(pod_name, file_path, dest_user, cookies = self.__cookies, host = self.__host)
 
 	#https://docs.fairos.fairdatasociety.org/api/index.html#tag/File-System/paths/~1v1~1file~1receive/get
 	def receive_file(self, pod_name:str, sharing_ref:str, dir_path:str):

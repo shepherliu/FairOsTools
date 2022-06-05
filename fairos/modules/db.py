@@ -29,7 +29,7 @@ def create_documentDB(pod_name, table_name, si, mutable, cookies = None, host = 
 		
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.text
 		}
 
@@ -60,7 +60,7 @@ def list_documentDBs(pod_name, cookies = None, host = 'http://localhost:9090'):
 		
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.json()
 		}
 
@@ -96,7 +96,7 @@ def open_documentDB(pod_name, table_name, cookies = None, host = 'http://localho
 		
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.text
 		}
 
@@ -141,7 +141,7 @@ def count_documents(pod_name, table_name, expr, cookies = None, host = 'http://l
 		
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.text
 		}
 
@@ -177,7 +177,7 @@ def delete_documentDB(pod_name, table_name, cookies = None, host = 'http://local
 		
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.text
 		}
 
@@ -208,7 +208,7 @@ def find_documents(pod_name, table_name, expr, limit, cookies = None, host = 'ht
 
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.json()
 		}
 
@@ -249,7 +249,7 @@ def load_json(pod_name, table_name, json, cookies = None, host = 'http://localho
 		
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.text
 		}
 
@@ -286,7 +286,7 @@ def index_json(pod_name, table_name, file, cookies = None, host = 'http://localh
 		
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.text
 		}
 
@@ -323,7 +323,7 @@ def put_document(pod_name, table_name, doc, cookies = None, host = 'http://local
 		
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.text
 		}
 
@@ -354,7 +354,7 @@ def get_document(pod_name, table_name, id, cookies = None, host = 'http://localh
 		
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.text
 		}
 
@@ -391,7 +391,7 @@ def delete_document(pod_name, table_name, id, cookies = None, host = 'http://loc
 		
 		ret = {
 			'message': 'success',
-			'code': 0,
+			'code': res.status_code,
 			'data': res.text
 		}
 
