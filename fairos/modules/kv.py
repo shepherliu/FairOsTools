@@ -32,7 +32,15 @@ def create_new_table(pod_name, table_name, indexType, cookies = None, host = 'ht
 
 		return ret
 
-	return res.json()
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #list tables
 def list_tables(pod_name, cookies = None, host = 'http://localhost:9090'):
@@ -55,7 +63,15 @@ def list_tables(pod_name, cookies = None, host = 'http://localhost:9090'):
 
 		return ret
 
-	return res.json()
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #open table
 def open_table(pod_name, table_name, cookies = None, host = 'http://localhost:9090'):
@@ -83,7 +99,15 @@ def open_table(pod_name, table_name, cookies = None, host = 'http://localhost:90
 
 		return ret
 
-	return res.json()
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #count table
 def count_table(pod_name, table_name, cookies = None, host = 'http://localhost:9090'):
@@ -111,7 +135,15 @@ def count_table(pod_name, table_name, cookies = None, host = 'http://localhost:9
 
 		return ret
 
-	return res.json()
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #delete table
 def delete_table(pod_name, table_name, cookies = None, host = 'http://localhost:9090'):
@@ -139,7 +171,15 @@ def delete_table(pod_name, table_name, cookies = None, host = 'http://localhost:
 
 		return ret
 
-	return res.json()
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #put key value
 def put_key_value(pod_name, table_name, key, value, cookies = None, host = 'http://localhost:9090'):
@@ -169,7 +209,15 @@ def put_key_value(pod_name, table_name, key, value, cookies = None, host = 'http
 
 		return ret
 
-	return res.json()
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #get value
 def get_value(pod_name, table_name, key, format = '', cookies = None, host = 'http://localhost:9090'):
@@ -198,7 +246,15 @@ def get_value(pod_name, table_name, key, format = '', cookies = None, host = 'ht
 
 		return ret
 
-	return res.json()
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #delete value
 def delete_value(pod_name, table_name, key, cookies = None, host = 'http://localhost:9090'):
@@ -227,7 +283,15 @@ def delete_value(pod_name, table_name, key, cookies = None, host = 'http://local
 
 		return ret
 
-	return res.json()
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #seek key
 def seek_key(pod_name, table_name, start, end, limit, cookies = None, host = 'http://localhost:9090'):
@@ -258,7 +322,15 @@ def seek_key(pod_name, table_name, start, end, limit, cookies = None, host = 'ht
 
 		return ret
 
-	return res.json()
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #get next
 def get_next(pod_name, table_name, cookies = None, host = 'http://localhost:9090'):
@@ -281,7 +353,15 @@ def get_next(pod_name, table_name, cookies = None, host = 'http://localhost:9090
 
 		return ret
 
-	return res.json()
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #load csv
 def load_csv(pod_name, table_name, memory, cookies = None, host = 'http://localhost:9090'):
@@ -310,7 +390,15 @@ def load_csv(pod_name, table_name, memory, cookies = None, host = 'http://localh
 
 		return ret
 
-	return res.json()
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #key present
 def key_present(pod_name, table_name, key, cookies = None, host = 'http://localhost:9090'):
@@ -333,4 +421,12 @@ def key_present(pod_name, table_name, key, cookies = None, host = 'http://localh
 
 		return ret
 
-	return res.json()	
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret

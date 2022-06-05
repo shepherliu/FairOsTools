@@ -9,7 +9,7 @@ import requests
 #singup user
 def signup_user(user_name, password, host = 'http://localhost:9090' , mnemonic = ''):
 
-	path = '/v2/user/signup';
+	path = '/v1/user/signup';
 
 	headers = {
 		'Content-Type': 'application/json'
@@ -36,12 +36,20 @@ def signup_user(user_name, password, host = 'http://localhost:9090' , mnemonic =
 
 		return ret
 	
-	return res.json()
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #logon user
 def login_user(user_name, password, host = 'http://localhost:9090'):
 	
-	path = '/v2/user/login'
+	path = '/v1/user/login'
 
 	headers = {
 		'Content-Type': 'application/json'
@@ -64,7 +72,15 @@ def login_user(user_name, password, host = 'http://localhost:9090'):
 
 		return ret
 
-	return res.json()
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #import user
 def import_user(user_name, password, address, host = 'http://localhost:9090'):
@@ -94,12 +110,20 @@ def import_user(user_name, password, address, host = 'http://localhost:9090'):
 
 		return ret
 
-	return res.json()
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #user present
 def user_present(user_name, host = 'http://localhost:9090'):
 
-	path = '/v2/user/present?user_name=' + user_name
+	path = '/v1/user/present?user_name=' + user_name
 	
 	headers = {
 		'Content-Type': 'application/json'
@@ -117,7 +141,15 @@ def user_present(user_name, host = 'http://localhost:9090'):
 
 		return ret
 
-	return res.json()
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #is logged-in
 def is_logged_in(user_name, host = 'http://localhost:9090'):
@@ -140,7 +172,15 @@ def is_logged_in(user_name, host = 'http://localhost:9090'):
 
 		return ret
 
-	return res.json()
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #logout user
 def user_logout(cookies = None, host = 'http://localhost:9090'):
@@ -163,7 +203,15 @@ def user_logout(cookies = None, host = 'http://localhost:9090'):
 
 		return ret
 
-	return res.json()
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #export user
 def export_user(cookies = None, host = 'http://localhost:9090'):
@@ -186,12 +234,20 @@ def export_user(cookies = None, host = 'http://localhost:9090'):
 
 		return ret
 
-	return res.json()
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #migrate user
 def migrate_user(password, cookies = None, host = 'http://localhost:9090'):
 
-	path = '/v2/user/delete'
+	path = '/v1/user/delete'
 
 #delete user
 def delete_user(password, cookies = None, host = 'http://localhost:9090'):
@@ -218,7 +274,15 @@ def delete_user(password, cookies = None, host = 'http://localhost:9090'):
 
 		return ret
 
-	return res.json()	
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #user stat
 def user_stat(cookies = None, host = 'http://localhost:9090'):
@@ -241,4 +305,12 @@ def user_stat(cookies = None, host = 'http://localhost:9090'):
 
 		return ret
 
-	return res.json()			
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret		

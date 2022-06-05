@@ -33,7 +33,15 @@ def create_documentDB(pod_name, table_name, si, mutable, cookies = None, host = 
 
 		return ret	
 
-	return res.json()
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #list document dbs
 def list_documentDBs(pod_name, cookies = None, host = 'http://localhost:9090'):
@@ -56,7 +64,15 @@ def list_documentDBs(pod_name, cookies = None, host = 'http://localhost:9090'):
 
 		return ret	
 
-	return res.json()	
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #open document db
 def open_documentDB(pod_name, table_name, cookies = None, host = 'http://localhost:9090'):
@@ -84,7 +100,15 @@ def open_documentDB(pod_name, table_name, cookies = None, host = 'http://localho
 
 		return ret	
 
-	return res.json()		
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret	
 
 #count documents
 def count_documents(pod_name, table_name, expr, cookies = None, host = 'http://localhost:9090'):
@@ -113,7 +137,15 @@ def count_documents(pod_name, table_name, expr, cookies = None, host = 'http://l
 
 		return ret	
 
-	return res.json()	
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #delete documentDB
 def delete_documentDB(pod_name, table_name, cookies = None, host = 'http://localhost:9090'):
@@ -141,7 +173,15 @@ def delete_documentDB(pod_name, table_name, cookies = None, host = 'http://local
 
 		return ret	
 
-	return res.json()
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #find documents
 def find_documents(pod_name, table_name, expr, limit, cookies = None, host = 'http://localhost:9090'):
@@ -164,7 +204,15 @@ def find_documents(pod_name, table_name, expr, limit, cookies = None, host = 'ht
 
 		return ret	
 
-	return res.json()
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #load json
 def load_json(pod_name, table_name, filename, cookies = None, host = 'http://localhost:9090'):
@@ -194,7 +242,15 @@ def load_json(pod_name, table_name, filename, cookies = None, host = 'http://loc
 
 		return ret	
 
-	return res.json()		
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret		
 
 #index json
 def index_json(pod_name, table_name, file, cookies = None, host = 'http://localhost:9090'):
@@ -223,7 +279,15 @@ def index_json(pod_name, table_name, file, cookies = None, host = 'http://localh
 
 		return ret	
 
-	return res.json()
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #put document
 def put_document(pod_name, table_name, doc, cookies = None, host = 'http://localhost:9090'):
@@ -252,7 +316,15 @@ def put_document(pod_name, table_name, doc, cookies = None, host = 'http://local
 
 		return ret	
 
-	return res.json()
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #get document
 def get_document(pod_name, table_name, id, cookies = None, host = 'http://localhost:9090'):
@@ -275,7 +347,15 @@ def get_document(pod_name, table_name, id, cookies = None, host = 'http://localh
 
 		return ret	
 
-	return res.json()	
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #delete docuemnt
 def delete_document(pod_name, table_name, id, cookies = None, host = 'http://localhost:9090'):
@@ -304,4 +384,12 @@ def delete_document(pod_name, table_name, id, cookies = None, host = 'http://loc
 
 		return ret	
 
-	return res.json()	
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret

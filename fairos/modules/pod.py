@@ -26,7 +26,15 @@ def pod_receiveinfo(reference, cookies = None, host = 'http://localhost:9090'):
 
 		return ret
 
-	return res.json()
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #pod receive
 def pod_receive(reference, cookies = None, host = 'http://localhost:9090'):
@@ -49,7 +57,15 @@ def pod_receive(reference, cookies = None, host = 'http://localhost:9090'):
 
 		return ret
 
-	return res.json()			
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret		
 
 #new pod
 def new_pod(pod_name, password, cookies = None, host = 'http://localhost:9090'):
@@ -77,7 +93,15 @@ def new_pod(pod_name, password, cookies = None, host = 'http://localhost:9090'):
 
 		return ret
 
-	return res.json()
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #open pod
 def open_pod(pod_name, password, cookies = None, host = 'http://localhost:9090'):	
@@ -105,7 +129,15 @@ def open_pod(pod_name, password, cookies = None, host = 'http://localhost:9090')
 
 		return ret
 
-	return res.json()
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #close pod
 def close_pod(pod_name, cookies = None, host = 'http://localhost:9090'):
@@ -132,7 +164,15 @@ def close_pod(pod_name, cookies = None, host = 'http://localhost:9090'):
 
 		return ret
 
-	return res.json()
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #sync pod
 def sync_pod(pod_name, cookies = None, host = 'http://localhost:9090'):
@@ -159,7 +199,15 @@ def sync_pod(pod_name, cookies = None, host = 'http://localhost:9090'):
 
 		return ret
 
-	return res.json()
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #share pod
 def share_pod(pod_name, password, cookies = None, host = 'http://localhost:9090'):
@@ -187,7 +235,15 @@ def share_pod(pod_name, password, cookies = None, host = 'http://localhost:9090'
 
 		return ret
 
-	return res.json()
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #delete pod
 def delete_pod(pod_name, password, cookies = None, host = 'http://localhost:9090'):
@@ -215,7 +271,15 @@ def delete_pod(pod_name, password, cookies = None, host = 'http://localhost:9090
 
 		return ret
 
-	return res.json()	
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret
 
 #list pod
 def list_pod(cookies = None, host = 'http://localhost:9090'):
@@ -238,7 +302,15 @@ def list_pod(cookies = None, host = 'http://localhost:9090'):
 
 		return ret
 
-	return res.json()	
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret	
 
 #stat pod
 def stat_pod(pod_name, cookies = None, host = 'http://localhost:9090'):
@@ -261,7 +333,15 @@ def stat_pod(pod_name, cookies = None, host = 'http://localhost:9090'):
 
 		return ret
 
-	return res.json()		
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret	
 
 #pod present
 def pod_present(pod_name, cookies = None, host = 'http://localhost:9090'):
@@ -284,4 +364,12 @@ def pod_present(pod_name, cookies = None, host = 'http://localhost:9090'):
 
 		return ret
 
-	return res.json()		
+	try:
+		ret = res.json()
+	except:
+		ret = {
+			'message': ret.text(),
+			'code': 0
+		}
+
+	return ret	
