@@ -311,8 +311,8 @@ def seek_key(pod_name, table_name, start_prefix, end_prefix, limit, cookies = No
 	data = {
 		'pod_name': pod_name,
 		'table_name': table_name,
-		'start_prefix': start,
-		'end_prefix': end,
+		'start_prefix': start_prefix,
+		'end_prefix': end_prefix,
 		'limit': limit
 	}
 

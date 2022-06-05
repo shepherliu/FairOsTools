@@ -187,10 +187,6 @@ def test():
 	res = fs.open_table('pod1', 'test_table')
 	print(res)
 
-	print('test count table')
-	res = fs.count_table('pod1', 'test_table')
-	print(res)
-
 	print('test delete table')
 	res = fs.delete_table('pod1', 'test_table2')
 	print(res)
@@ -215,6 +211,10 @@ def test():
 	res = fs.delete_value('pod1', 'test_table', 'test_key2')
 	print(res)
 
+	print('test count table')
+	res = fs.count_table('pod1', 'test_table')
+	print(res)	
+	
 	print('test seek key')
 	res = fs.seek_key('pod1', 'test_table', 'test_')
 	print(res)
