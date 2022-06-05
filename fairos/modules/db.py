@@ -266,14 +266,14 @@ def load_json(pod_name, table_name, json, cookies = None, host = 'http://localho
 	return ret		
 
 #index json
-def index_json(pod_name, table_name, file, cookies = None, host = 'http://localhost:9090'):
+def index_json(pod_name, table_name, file_name, cookies = None, host = 'http://localhost:9090'):
 
 	path = '/v1/doc/indexjson'
 
 	data = {
 		'pod_name': pod_name,
 		'table_name': table_name,
-		'file': file
+		'file_name': file_name
 	}
 
 	headers = {

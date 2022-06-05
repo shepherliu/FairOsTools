@@ -335,7 +335,7 @@ def receive_file(pod_name, sharing_ref, dir_path, cookies = None, host = 'http:/
 #receive file info
 def receive_file_info(pod_name, sharing_ref, cookies = None, host = 'http://localhost:9090'):
 
-	path = '/v1/file/receiveinfo?pod_name={0}&sharing_ref={1}&dir_path={2}'.format(pod_name,sharing_ref)
+	path = '/v1/file/receiveinfo?pod_name={0}&sharing_ref={1}'.format(pod_name,sharing_ref)
 
 	data = {
 		'pod_name': pod_name,

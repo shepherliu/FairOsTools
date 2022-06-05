@@ -362,9 +362,9 @@ class Fairos(object):
 		return db.load_json(pod_name, table_name, json, cookies = self.__cookies, host = self.__host)
 
 	#https://docs.fairos.fairdatasociety.org/api/index.html#tag/Key-Value-Store/paths/~1v1~1doc~1indexjson/post
-	def index_json(self, pod_name:str, table_name:str, file:str):
+	def index_json(self, pod_name:str, table_name:str, file_name:str):
 
-		return db.index_json(pod_name, table_name, file, cookies = self.__cookies, host = self.__host)
+		return db.index_json(pod_name, table_name, file_name, cookies = self.__cookies, host = self.__host)
 
 	#https://docs.fairos.fairdatasociety.org/api/index.html#tag/Key-Value-Store/paths/~1v1~1doc~1entry~1put/post
 	def put_document(self, pod_name:str, table_name:str, doc:str):

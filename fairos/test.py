@@ -158,6 +158,7 @@ def test():
 
 	res = fs.login_user('test-swarm3', 'test-swarm3')
 	res = fs.new_pod('pod2')
+	res = fs.open_pod('pod2')
 
 	print('test receive file')
 	res = fs.receive_file('pod2', file_sharing_reference, '/')
@@ -168,15 +169,15 @@ def test():
 	print(res)
 
 	print('test stat info')
-	res = fs.stat_info('pod2', '/test/test.txt')
+	res = fs.stat_info('pod2', '/test.txt')
 	print(res)
 
 	print('test delete info')
-	res = fs.delete_info('pod2', '/test/test.txt')
+	res = fs.delete_info('pod2', '/test.txt')
 	print(res)
 
 	res = fs.login_user('test-swarm2', 'test-swarm2')
-	res = fs.new_pod('pod1')
+	res = fs.open_pod('pod1')
 	print('test create new table')
 	res = fs.create_new_table('pod1', 'test_table')
 	print(res)
@@ -252,11 +253,11 @@ def test():
 	print(res)
 
 	print('test count doc')
-	res = fs.count_documents('pod1', 'test-doc', '')
+	res = fs.count_documents('pod1', 'test-doc', '*')
 	print(res)
 
 	print('test find doc')
-	res = fs.find_documents('pod1', 'test-doc', '', 0)
+	res = fs.find_documents('pod1', 'test-doc', '*', 0)
 	print(res)
 
 	print('load json')
@@ -268,7 +269,7 @@ def test():
 	print(res)
 
 	print('test put doc')
-	res = fs.put_document('pod1', 'test-doc', '/test.pdf')
+	res = fs.put_document('pod1', 'test-doc', '/test/test/test.txt')
 	print(res)
 
 	print('test get doc')
