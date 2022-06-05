@@ -3,6 +3,7 @@
 import os
 import sys
 import json
+import mimetypes
 import requests
 from requests_toolbelt import MultipartEncoder
 
@@ -176,11 +177,15 @@ def upload_file(pod_name, dir_path, filename, block_size = '512', cookies = None
 
 	path = '/v1/file/upload'
 
+	basename = os.path.basename(filename)
+
+	types, encoding = mimetypes.guess_type(filename)
+
 	m = MultipartEncoder(fields = {
 		'pod_name': pod_name,
 		'dir_path': dir_path,
 		'block_size': block_size,
-		'files': ('filename', open(filename, 'rb'), 'text/plain')
+		'files': (basename, open(filename, 'rb'), types)
 	})
 
 	headers = {

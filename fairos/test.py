@@ -228,7 +228,7 @@ def test():
 	print(res)
 
 	print('test load csv')
-	res = fs.load_csv('pod1', 'test_table', 'csv', 'memory')
+	res = fs.load_csv('pod1', 'test_table', '/tmp/test.csv', 'memory')
 	print(res)
 
 	print('test create doc db')
@@ -252,7 +252,7 @@ def test():
 	print(res)
 
 	print('load json')
-	res = fs.load_json('pod1', 'test-doc', '')
+	res = fs.load_json('pod1', 'test-doc', '/tmp/test.json')
 	print(res)
 
 	print('index json')

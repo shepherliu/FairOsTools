@@ -3,7 +3,9 @@
 import os
 import sys
 import json
+import mimetypes
 import requests
+from requests_toolbelt import MultipartEncoder
 
 #create document db
 def create_documentDB(pod_name, table_name, si, mutable, cookies = None, host = 'http://localhost:9090'):
@@ -227,18 +229,21 @@ def load_json(pod_name, table_name, json, cookies = None, host = 'http://localho
 
 	path = '/v1/doc/loadjson'
 
-	params = {
-		'pod_name': pod_name,
-		'table_name': table_name
-	}
+	basename = os.path.basename(filename)
 
-	files = {'files': open(json,'rb')}
+	types, encoding = mimetypes.guess_type(filename)
+
+	m = MultipartEncoder(fields = {
+		'pod_name': pod_name,
+		'table_name': table_name,
+		'json': (basename, open(filename, 'rb'), types)
+	})
 
 	headers = {
-		'Content-Type': 'application/x-www-form-urlencoded',
-	}
+		'Content-Type': m.content_type
+	}		
 
-	res = requests.post(url = host + path, headers = headers , cookies = cookies, params = params, files = files)
+	res = requests.post(url = host + path, headers = headers , cookies = cookies, data = m)
 
 	if res.status_code >= 200 and res.status_code < 300:
 		

@@ -3,7 +3,9 @@
 import os
 import sys
 import json
+import mimetypes
 import requests
+from requests_toolbelt import MultipartEncoder
 
 #create new table
 def create_new_table(pod_name, table_name, indexType, cookies = None, host = 'http://localhost:9090'):
@@ -376,18 +378,22 @@ def load_csv(pod_name, table_name, csv, memory, cookies = None, host = 'http://l
 
 	path = '/v1/kv/loadcsv'
 
-	data = {
+	basename = os.path.basename(filename)
+
+	types, encoding = mimetypes.guess_type(filename)
+
+	m = MultipartEncoder(fields = {
 		'pod_name': pod_name,
 		'table_name': table_name,
-		'csv': csv,
-		'memory': memory
-	}
+		'memory': memory,
+		'csv': (basename, open(filename, 'rb'), types)
+	})
 
 	headers = {
-		'Content-Type': 'application/json'
+		'Content-Type': m.content_type
 	}	
 
-	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))	
+	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = m)	
 
 	if res.status_code >= 200 and res.status_code < 300:
 
