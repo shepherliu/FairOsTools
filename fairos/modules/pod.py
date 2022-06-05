@@ -6,9 +6,9 @@ import json
 import requests
 
 #pod receive info
-def pod_receiveinfo(reference, cookies = None, host = 'http://localhost:9090'):
+def pod_receiveinfo(sharing_ref, cookies = None, host = 'http://localhost:9090'):
 
-	path = '/v1/pod/receiveinfo?reference={0}'.format(reference)
+	path = '/v1/pod/receiveinfo?sharing_ref={0}'.format(sharing_ref)
 
 	headers = {
 		'Content-Type': 'application/json'
@@ -37,9 +37,9 @@ def pod_receiveinfo(reference, cookies = None, host = 'http://localhost:9090'):
 	return ret
 
 #pod receive
-def pod_receive(reference, cookies = None, host = 'http://localhost:9090'):
+def pod_receive(sharing_ref, cookies = None, host = 'http://localhost:9090'):
 
-	path = '/v1/pod/receive?reference={0}'.format(reference)
+	path = '/v1/pod/receive?sharing_ref={0}'.format(sharing_ref)
 
 	headers = {
 		'Content-Type': 'application/json'

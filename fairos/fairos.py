@@ -130,14 +130,14 @@ class Fairos(object):
 	"""pod functions """
 
 	#https://docs.fairos.fairdatasociety.org/api/index.html#tag/Pod/paths/~1v1~1pod~1receiveinfo/get
-	def pod_receiveinfo(self, reference:str):
+	def pod_receiveinfo(self, sharing_ref:str):
 
-		return pod.pod_receiveinfo(reference, cookies = self.__cookies, host = self.__host)
+		return pod.pod_receiveinfo(sharing_ref, cookies = self.__cookies, host = self.__host)
 
 	#https://docs.fairos.fairdatasociety.org/api/index.html#tag/Pod/paths/~1v1~1pod~1receive/get
-	def pod_receive(self, reference:str):
+	def pod_receive(self, sharing_ref:str):
 
-		return pod.pod_receive(reference, cookies = self.__cookies, host = self.__host)
+		return pod.pod_receive(sharing_ref, cookies = self.__cookies, host = self.__host)
 
 	#https://docs.fairos.fairdatasociety.org/api/index.html#tag/Pod/paths/~1v1~1pod~1new/post
 	def new_pod(self, pod_name:str):

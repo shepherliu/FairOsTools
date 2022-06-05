@@ -20,7 +20,10 @@ def test():
 	res = fs.signup_user('test-swarm3', 'test-swarm3')
 	print(res)	
 
-	address = res['data']['address']
+	try:
+		address = res['data']['address']
+	except:
+		address = '0x65Fc06282509881279a5C75C9aD4cD3Bc2714169'
 
 	print('test login user')
 	res = fs.login_user('test-swarm1', 'test-swarm1')
@@ -75,7 +78,7 @@ def test():
 	res = fs.open_pod('pod1')
 	print('test sync pod')
 	res = fs.sync_pod('pod1')
-	pprint(res)
+	print(res)
 
 	print('test share pod')
 	res = fs.share_pod('pod1')
@@ -104,7 +107,7 @@ def test():
 	print(res)
 
 	print('test pod receive')
-	res = pod_receive(pod_sharing_reference)
+	res = fs.pod_receive(pod_sharing_reference)
 	print(res)
 
 	print('test mkdir')

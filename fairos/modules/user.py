@@ -247,7 +247,7 @@ def export_user(cookies = None, host = 'http://localhost:9090'):
 #delete user
 def delete_user(password, cookies = None, host = 'http://localhost:9090'):
 	
-	path = '/v2/user/delete'
+	path = '/v1/user/delete'
 
 	data = {
 		'password': password
