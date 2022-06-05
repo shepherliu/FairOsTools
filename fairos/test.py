@@ -223,7 +223,7 @@ def test():
 	print(res)	
 
 	print('test seek key')
-	res = fs.seek_key('pod1', 'test_table4', 'test')
+	res = fs.seek_key('pod1', 'test_table4', 't')
 	print(res)
 
 	print('test get next')
@@ -238,6 +238,7 @@ def test():
 	res = fs.key_present('pod1', 'test_table4', 'test_key')
 	print(res)
 
+	res = fs.open_table('pod1', 'test_table5')
 	print('test load csv')
 	res = fs.load_csv('pod1', 'test_table5', '/tmp/test.csv', 'memory')
 	print(res)
@@ -257,11 +258,11 @@ def test():
 	print(res)
 
 	print('test count doc')
-	res = fs.count_documents('pod1', 'test-doc1', '*')
+	res = fs.count_documents('pod1', 'test-doc1', '')
 	print(res)
 
 	print('test find doc')
-	res = fs.find_documents('pod1', 'test-doc1', '*', 0)
+	res = fs.find_documents('pod1', 'test-doc1', 'abc', 0)
 	print(res)
 
 	print('test put doc')
