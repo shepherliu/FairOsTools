@@ -223,7 +223,7 @@ def test():
 	print(res)	
 
 	print('test seek key')
-	res = fs.seek_key('pod1', 'test_table4', 't')
+	res = fs.seek_key('pod1', 'test_table4', 'test_key', 'test_key')
 	print(res)
 
 	print('test get next')
