@@ -360,11 +360,18 @@ def get_next(pod_name, table_name, cookies = None, host = 'http://localhost:9090
 
 	if res.status_code >= 200 and res.status_code < 300:
 
-		ret = {
-			'message': 'success',
-			'code': res.status_code,
-			'data': res.json(),
-		}
+		try:
+			ret = {
+				'message': 'success',
+				'code': res.status_code,
+				'data': res.json(),
+			}
+		except:
+			ret = {
+				'message': 'success',
+				'code': res.status_code,
+				'data': res.text,
+			}			
 
 		return ret
 

@@ -243,7 +243,7 @@ def download_file(pod_name, file_path, request_type = 'post', cookies = None, ho
 		ret = {
 			'message': 'success',
 			'code': res.status_code,
-			'content': res.raw.read()
+			'content': res.content
 		}
 
 		return ret	
