@@ -238,6 +238,8 @@ def download_file(pod_name, file_path, request_type = 'post', cookies = None, ho
 
 		res = requests.post(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))
 
+	print(res.headers)
+
 	if res.status_code >= 200 and res.status_code < 300:
 		
 		ret = {

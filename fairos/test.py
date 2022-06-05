@@ -182,14 +182,16 @@ def test():
 	res = fs.create_new_table('pod1', 'test_table')
 	print(res)
 	res = fs.create_new_table('pod1', 'test_table2')
-	res = fs.create_new_table('pod1', 'test_tabl3')
+	res = fs.create_new_table('pod1', 'test_table3')
+	res = fs.create_new_table('pod1', 'test_table4')
+	res = fs.create_new_table('pod1', 'test_table5')
 
 	print('test list tables')
 	res = fs.list_tables('pod1')
 	print(res)
 
 	print('test open table')
-	res = fs.open_table('pod1', 'test_table')
+	res = fs.open_table('pod1', 'test_table4')
 	print(res)
 
 	print('test delete table')
@@ -197,91 +199,94 @@ def test():
 	print(res)
 
 	print('test put key value')
-	res = fs.put_key_value('pod1', 'test_table', 'test_key', 'test_value')
+	res = fs.put_key_value('pod1', 'test_table4', 'test_key', 'test_value')
 	print(res)
-	res = fs.put_key_value('pod1', 'test_table', 'test_key', 'test_value2')
+	res = fs.put_key_value('pod1', 'test_table4', 'test_key', 'test_value2')
 	print(res)
-	res = fs.put_key_value('pod1', 'test_table', 'test_key2', 'test_value2')
+	res = fs.put_key_value('pod1', 'test_table4', 'test_key2', 'test_value2')
 	print(res)
-	res = fs.put_key_value('pod1', 'test_table', 'test_key3', 'test_value3')
+	res = fs.put_key_value('pod1', 'test_table4', 'test_key3', 'test_value3')
 	print(res)
 
 	print('test get value')
-	res = fs.get_value('pod1', 'test_table', 'test_key')
+	res = fs.get_value('pod1', 'test_table4', 'test_key')
 	print(res)
-	res = fs.get_value('pod1', 'test_table', 'test_key2')
+	res = fs.get_value('pod1', 'test_table4', 'test_key2')
 	print(res)
 
 	print('test delete value')
-	res = fs.delete_value('pod1', 'test_table', 'test_key2')
+	res = fs.delete_value('pod1', 'test_table4', 'test_key2')
 	print(res)
 
 	print('test count table')
-	res = fs.count_table('pod1', 'test_table')
+	res = fs.count_table('pod1', 'test_table4')
 	print(res)	
 
 	print('test seek key')
-	res = fs.seek_key('pod1', 'test_table', 'test')
+	res = fs.seek_key('pod1', 'test_table4', 'test')
 	print(res)
 
 	print('test get next')
-	res = fs.get_next('pod1', 'test_table')
+	res = fs.get_next('pod1', 'test_table4')
 	print(res)
-	res = fs.get_next('pod1', 'test_table')
+	res = fs.get_next('pod1', 'test_table4')
 	print(res)
-	res = fs.get_next('pod1', 'test_table')
+	res = fs.get_next('pod1', 'test_table4')
 	print(res)
 
 	print('test key present')
-	res = fs.key_present('pod1', 'test_table', 'test_key')
+	res = fs.key_present('pod1', 'test_table4', 'test_key')
 	print(res)
 
 	print('test load csv')
-	res = fs.load_csv('pod1', 'test_table', '/tmp/test.csv', 'memory')
+	res = fs.load_csv('pod1', 'test_table5', '/tmp/test.csv', 'memory')
 	print(res)
 
 	print('test create doc db')
-	res = fs.create_documentDB('pod1', 'test-doc', 'firsr_name=string,age=number,tags=map', True)
+	res = fs.create_documentDB('pod1', 'test-doc1', 'firsr_name=string,age=number,tags=map', True)
 	print(res)
+	res = fs.create_documentDB('pod1', 'test-doc2', 'firsr_name=string,age=number,tags=map', True)
+	res = fs.create_documentDB('pod1', 'test-doc3', 'firsr_name=string,age=number,tags=map', True)
 
 	print('test list doc')
 	res = fs.list_documentDBs('pod1')
 	print(res)
 
 	print('test open doc')
-	res = fs.open_documentDB('pod1', 'test-doc')
+	res = fs.open_documentDB('pod1', 'test-doc1')
 	print(res)
 
 	print('test count doc')
-	res = fs.count_documents('pod1', 'test-doc', '*')
+	res = fs.count_documents('pod1', 'test-doc1', '*')
 	print(res)
 
 	print('test find doc')
-	res = fs.find_documents('pod1', 'test-doc', '*', 0)
-	print(res)
-
-	print('load json')
-	res = fs.load_json('pod1', 'test-doc', '/tmp/test.json')
-	print(res)
-
-	print('index json')
-	res = fs.index_json('pod1', 'test-doc', 'test.json')
+	res = fs.find_documents('pod1', 'test-doc1', '*', 0)
 	print(res)
 
 	print('test put doc')
-	res = fs.put_document('pod1', 'test-doc', '/test/test/test.txt')
+	res = fs.put_document('pod1', 'test-doc1', '/test/test/test.txt')
 	print(res)
 
 	print('test get doc')
-	res = fs.get_document('pod1', 'test-doc', '/test.pdf')
+	res = fs.get_document('pod1', 'test-doc1', '/test.pdf')
 	print(res)
 
 	print('test delete doc')
-	res = fs.delete_document('pod1', 'test-doc', '/test.pdf')
+	res = fs.delete_document('pod1', 'test-doc1', '/test.pdf')
 	print(res)
 
 	print('test delete doc db')
-	res = fs.delete_documentDB('pod1', 'test-doc')
+	res = fs.delete_documentDB('pod1', 'test-doc1')
+	print(res)	
+
+	res = fs.open_documentDB('pod1', 'test-doc2')
+	print('load json')
+	res = fs.load_json('pod1', 'test-doc2', '/tmp/test.json')
+	print(res)
+
+	print('index json')
+	res = fs.index_json('pod1', 'test-doc2', 'test.json')
 	print(res)		
 
 if __name__ == '__main__':
