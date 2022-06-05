@@ -283,6 +283,9 @@ def delete_value(pod_name, table_name, key, cookies = None, host = 'http://local
 
 	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))	
 
+	print(res.status_code)
+	print(res.text)
+	
 	if res.status_code >= 200 and res.status_code < 300:
 
 		ret = {
@@ -313,7 +316,7 @@ def seek_key(pod_name, table_name, start_prefix, end_prefix, limit, cookies = No
 		'table_name': table_name,
 		'start_prefix': start_prefix,
 		'end_prefix': end_prefix,
-		'limit': limit
+		'limit': str(limit)
 	}
 
 	headers = {
@@ -345,7 +348,7 @@ def seek_key(pod_name, table_name, start_prefix, end_prefix, limit, cookies = No
 #get next
 def get_next(pod_name, table_name, cookies = None, host = 'http://localhost:9090'):
 
-	path = '/v1/kv/seek/next?table_name={0}&table_name={1}'.format(pod_name, table_name)
+	path = '/v1/kv/seek/next?pod_name={0}&table_name={1}'.format(pod_name, table_name)
 
 	data = {
 		'pod_name': pod_name,
