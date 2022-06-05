@@ -9,7 +9,7 @@ import requests
 #singup user
 def signup_user(user_name, password, host = 'http://localhost:9090' , mnemonic = ''):
 
-	path = '/v1/user/signup';
+	path = '/v2/user/signup';
 
 	headers = {
 		'Content-Type': 'application/json'
@@ -41,7 +41,7 @@ def signup_user(user_name, password, host = 'http://localhost:9090' , mnemonic =
 #logon user
 def login_user(user_name, password, host = 'http://localhost:9090'):
 	
-	path = '/v1/user/login'
+	path = '/v2/user/login'
 
 	headers = {
 		'Content-Type': 'application/json'
@@ -99,7 +99,7 @@ def import_user(user_name, password, address, host = 'http://localhost:9090'):
 #user present
 def user_present(user_name, host = 'http://localhost:9090'):
 
-	path = '/v1/user/present?user_name=' + user_name
+	path = '/v2/user/present?user_name=' + user_name
 	
 	headers = {
 		'Content-Type': 'application/json'
@@ -188,10 +188,15 @@ def export_user(cookies = None, host = 'http://localhost:9090'):
 
 	return res.json()
 
+#migrate user
+def migrate_user(password, cookies = None, host = 'http://localhost:9090'):
+
+	path = '/v2/user/delete'
+
 #delete user
 def delete_user(password, cookies = None, host = 'http://localhost:9090'):
 	
-	path = '/v1/user/delete'
+	path = '/v2/user/migrate'
 
 	data = {
 		'password': password
@@ -201,7 +206,7 @@ def delete_user(password, cookies = None, host = 'http://localhost:9090'):
 		'Content-Type': 'application/json'
 	}		
 
-	res = requests.delete(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))
+	res = requests.post(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))
 
 	if res.status_code >= 200 and res.status_code < 300:
 
