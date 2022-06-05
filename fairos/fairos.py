@@ -189,35 +189,47 @@ class Fairos(object):
 	#https://docs.fairos.fairdatasociety.org/api/index.html#tag/File-System/paths/~1v1~1dir~1mkdir/post
 	def make_dir(self, pod_name:str, dir_path:str):
 
+		dir_path = os.path.abspath(dir_path)
+
 		return filesystem.make_dir(pod_name, dir_path, cookies = self.__cookies, host = self.__host)
 
 	#https://docs.fairos.fairdatasociety.org/api/index.html#tag/File-System/paths/~1v1~1dir~1rmdir/delete
 	def remove_dir(self, pod_name:str, dir_path:str):
+
+		dir_path = os.path.abspath(dir_path)
 
 		return filesystem.remove_dir(pod_name, dir_path, cookies = self.__cookies, host = self.__host)
 
 	#https://docs.fairos.fairdatasociety.org/api/index.html#tag/File-System/paths/~1v1~1dir~1ls/get
 	def list_dir(self, pod_name:str, dir_path:str):
 
+		dir_path = os.path.abspath(dir_path)
+
 		return filesystem.list_dir(pod_name, dir_path, cookies = self.__cookies, host = self.__host)
 
 	#https://docs.fairos.fairdatasociety.org/api/index.html#tag/File-System/paths/~1v1~1dir~1stat/get
 	def stat_dir(self, pod_name:str, dir_path:str):
+
+		dir_path = os.path.abspath(dir_path)
 
 		return filesystem.stat_dir(pod_name, dir_path, cookies = self.__cookies, host = self.__host)
 
 	#https://docs.fairos.fairdatasociety.org/api/index.html#tag/File-System/paths/~1v1~1dir~1present/get
 	def dir_present(self, pod_name:str, dir_path:str):
 
+		dir_path = os.path.abspath(dir_path)
+
 		return filesystem.dir_present(pod_name, dir_path, cookies = self.__cookies, host =self.__host)
 
 	#https://docs.fairos.fairdatasociety.org/api/index.html#tag/File-System/paths/~1v1~1file~1upload/post
-	def upload_file(self, pod_name:str, pod_dir:str, filename:str, block_size = '512'):
+	def upload_file(self, pod_name:str, dir_path:str, filename:str, block_size = '512'):
 
-		return filesystem.upload_file(pod_name, pod_dir, filename, block_size = block_size, cookies = self.__cookies, host = self.__host)
+		dir_path = os.path.abspath(dir_path)
+
+		return filesystem.upload_file(pod_name, dir_path, filename, block_size = block_size, cookies = self.__cookies, host = self.__host)
 
 	#https://docs.fairos.fairdatasociety.org/api/index.html#tag/File-System/paths/~1v1~1file~1download/get
-	def download_file(pod_name:str, file_path:str, request_type = 'post'):
+	def download_file(self, pod_name:str, file_path:str, request_type = 'post'):
 
 		return filesystem.download_file(pod_name, file_path, request_type = request_type, cookies = self.__cookies, host = self.__host)
 
@@ -228,6 +240,8 @@ class Fairos(object):
 
 	#https://docs.fairos.fairdatasociety.org/api/index.html#tag/File-System/paths/~1v1~1file~1receive/get
 	def receive_file(self, pod_name:str, sharing_ref:str, dir_path:str):
+
+		dir_path = os.path.abspath(dir_path)
 
 		return filesystem.receive_file(pod_name, sharing_ref, dir_path, cookies = self.__cookies, host = self.__host)
 

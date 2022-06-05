@@ -85,6 +85,7 @@ def test():
 	pod_sharing_reference = res['data']['pod_sharing_reference']
 	print(res)
 
+	#test failed for not found, bugs
 	print('test delete pod')
 	res = fs.delete_pod('pod2')
 	print(res)
@@ -110,7 +111,11 @@ def test():
 	res = fs.pod_receive(pod_sharing_reference)
 	print(res)
 
+	res = fs.login_user('test-swarm2', 'test-swarm2')
+	res = fs.open_pod('pod1')
 	print('test mkdir')
+	res = fs.make_dir('pod1', '/test')
+	print(res)
 	res = fs.make_dir('pod1', '/test/dir')
 	print(res)
 
@@ -135,7 +140,7 @@ def test():
 	print(res)
 
 	print('test upload file')
-	res = fs.upload_file('pod1', '/test/test', 'test.txt')
+	res = fs.upload_file('pod1', '/test/test', '/tmp/test.txt')
 	print(res)
 
 	print('test download file')

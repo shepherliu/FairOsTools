@@ -171,13 +171,13 @@ def dir_present(pod_name, dir_path, cookies = None, host = 'http://localhost:909
 	return ret
 
 #upload file
-def upload_file(pod_name, pod_dir, filename, block_size = '512', cookies = None, host = 'http://localhost:9090'):
+def upload_file(pod_name, dir_path, filename, block_size = '512', cookies = None, host = 'http://localhost:9090'):
 
 	path = '/v1/file/upload'
 
 	params = {
 		'pod_name': pod_name,
-		'pod_dir': pod_dir,
+		'dir_path': dir_path,
 		'block_size': block_size
 	}
 
