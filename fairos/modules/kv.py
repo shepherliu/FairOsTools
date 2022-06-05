@@ -347,11 +347,16 @@ def get_next(pod_name, table_name, cookies = None, host = 'http://localhost:9090
 
 	path = '/v1/kv/seek/next?table_name={0}&table_name={1}'.format(pod_name, table_name)
 
+	data = {
+		'pod_name': pod_name,
+		'table_name': table_name
+	}
+
 	headers = {
 		'Content-Type': 'application/json'
 	}	
 
-	res = requests.get(url = host + path, headers = headers, cookies = cookies)	
+	res = requests.get(url = host + path, headers = headers, cookies = cookies, data = json.dumps(data))	
 
 	if res.status_code >= 200 and res.status_code < 300:
 
@@ -378,9 +383,9 @@ def load_csv(pod_name, table_name, csv, memory, cookies = None, host = 'http://l
 
 	path = '/v1/kv/loadcsv'
 
-	basename = os.path.basename(filename)
+	basename = os.path.basename(csv)
 
-	types, encoding = mimetypes.guess_type(filename)
+	types, encoding = mimetypes.guess_type(csv)
 
 	m = MultipartEncoder(fields = {
 		'pod_name': pod_name,

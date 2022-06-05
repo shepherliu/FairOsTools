@@ -229,9 +229,9 @@ def load_json(pod_name, table_name, json, cookies = None, host = 'http://localho
 
 	path = '/v1/doc/loadjson'
 
-	basename = os.path.basename(filename)
+	basename = os.path.basename(json)
 
-	types, encoding = mimetypes.guess_type(filename)
+	types, encoding = mimetypes.guess_type(json)
 
 	m = MultipartEncoder(fields = {
 		'pod_name': pod_name,

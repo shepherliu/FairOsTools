@@ -307,7 +307,7 @@ class Fairos(object):
 	#https://docs.fairos.fairdatasociety.org/api/index.html#tag/Key-Value-Store/paths/~1v1~1kv~1seek/post
 	def seek_key(self, pod_name:str, table_name:str, start_prefix:str, end_prefix = '', limit = 0):
 
-		return kv.seek_key(pod_name, table_name, start, end, limit, cookies = self.__cookies, host = self.__host)
+		return kv.seek_key(pod_name, table_name, start_prefix, end_prefix, limit, cookies = self.__cookies, host = self.__host)
 
 	#https://docs.fairos.fairdatasociety.org/api/index.html#tag/Key-Value-Store/paths/~1v1~1kv~1seek~1next/get
 	def get_next(self, pod_name:str, table_name:str):
@@ -352,7 +352,7 @@ class Fairos(object):
 		return db.delete_documentDB(pod_name, table_name, cookies = self.__cookies, host = self.__host)
 
 	#https://docs.fairos.fairdatasociety.org/api/index.html#tag/Document-DB/paths/~1v1~1doc~1find/get
-	def find_documents(self, pod_name:str, table_name:str, expr:str, limit:int):
+	def find_documents(self, pod_name:str, table_name:str, expr:str, limit = 0):
 
 		return db.find_documents(pod_name, table_name, expr, limit, cookies = self.__cookies, host = self.__host)
 
