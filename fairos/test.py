@@ -127,10 +127,6 @@ def test():
 	res = fs.make_dir('pod1', '/test/dir2')
 	res = fs.make_dir('pod1', '/test/dir3')
 
-	print('test list dir')
-	res = fs.list_dir('pod1', '/test')
-	print(res)
-
 	print('test stat dir')
 	res = fs.stat_dir('pod1', '/test/test')
 	print(res)
@@ -143,31 +139,39 @@ def test():
 	res = fs.upload_file('pod1', '/test/test', '/tmp/test.txt')
 	print(res)
 
+	print('test list dir')
+	res = fs.list_dir('pod1', '/test/test')
+	print(res)	
+
 	print('test download file')
 	res = fs.download_file('pod1', '/test/test/test.txt')
 	print(res)
 
-	print('test share file')
-	res = fs.share_file('pod1', '/test/test/test.txt', 'test-swarm3')
-	file_sharing_reference = res['data']['file_sharing_reference']
-	print(res)
+	# print('test share file')
+	# res = fs.share_file('pod1', '/test/test/test.txt', 'test-swarm3')
+	# print(res)
 
-	res.login_user('test-swarm3', 'test-swarm3')
-	print('test receive file')
-	res = fs.receive_file('pod1', file_sharing_reference, '/')
-	print(res)
+	# try:
+	# 	file_sharing_reference = res['data']['file_sharing_reference']
+	# except:
+	# 	file_sharing_reference = ''
 
-	print('test receive file info')
-	res = fs.receive_file_info('pod1', file_sharing_reference)
-	print(res)
+	# res.login_user('test-swarm3', 'test-swarm3')
+	# print('test receive file')
+	# res = fs.receive_file('pod1', file_sharing_reference, '/')
+	# print(res)
 
-	print('test stat info')
-	res = fs.stat_info('pod1', '/test/test.txt')
-	print(res)
+	# print('test receive file info')
+	# res = fs.receive_file_info('pod1', file_sharing_reference)
+	# print(res)
 
-	print('test delete info')
-	res = fs.delete_info('pod1', '/test/test.txt')
-	print(res)
+	# print('test stat info')
+	# res = fs.stat_info('pod1', '/test/test.txt')
+	# print(res)
+
+	# print('test delete info')
+	# res = fs.delete_info('pod1', '/test/test.txt')
+	# print(res)
 
 	print('test create new table')
 	res = fs.create_new_table('pod1', 'test_table')
