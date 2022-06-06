@@ -190,7 +190,7 @@ def upload_file(pod_name, dir_path, filename, block_size = '512', cookies = None
 
 	headers = {
 		'Content-Type': m.content_type,
-		'fairOS-dfs-Compression': "gzip"
+		'fairOS-dfs-Compression': ""
 	}
 
 	res = requests.post(url = host + path, headers = headers , cookies = cookies, data = m)
