@@ -63,6 +63,12 @@ class Fairos(object):
 		return res
 
 	def update_cookie(self, pod_name:str = None, table_name:str = None):
+		res = self.is_logged_in(self.__user_name)
+		if res['message'] != 'success':
+			return res
+		if res['data']['loggedin']:
+			return res
+
 		res = self.login_user(self.__user_name, self.__password)
 		if res['message'] != 'success':
 			return res
