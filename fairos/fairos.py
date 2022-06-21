@@ -62,6 +62,24 @@ class Fairos(object):
 
 		return res
 
+	def update_cookie(self, pod_name:str = None, table_name:str = None):
+		res = self.login_user(self.__user_name, self.__password)
+		if res['message'] != 'success':
+			return res
+		
+		if pod_name is None:
+			return res
+
+		res = self.open_pod(pod_name)
+		if res['message'] != 'success':
+			return res
+
+		if table_name is None:
+			return res
+
+		res = self.open_table(pod_name, table_name)
+		return res
+
 	#deprecated
 	def import_user(self, user_name:str, password:str, address:str):
 
